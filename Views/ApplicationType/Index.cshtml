@@ -1,4 +1,4 @@
-@model IEnumerable<Rocy.Models.Category>
+@model IEnumerable<Rocy.Models.ApplicationType>
 @{
     ViewData["Title"] = "Category";
 }
@@ -6,11 +6,11 @@
 <div class="container p-3">
     <div class="row pt-4">
         <div class="col-6 ">
-            <h3 class="text-primary">Category List</h3>
+            <h3 class="text-primary">Application Types List</h3>
         </div>
         <div class="col-6">
-            <a asp-Controller="Category" asp-action="Create" class="btn btn-primary">
-                Create New Categoty
+            <a asp-Controller="ApplicationType" asp-action="Create" class="btn btn-primary">
+                Create New Application type
             </a>
 
         </div>
@@ -23,7 +23,6 @@
     <table class="table table-striped table-bordered">
         <thead>
             <th>Name</th>
-            <th>Display number</th>
             <th></th>
         </thead>
         <tbody>
@@ -31,7 +30,6 @@
             {
                 <tr>
                     <td>@item.Name</td>
-                    <td>@item.Displayorder</td>
                     <td></td>
                 </tr>
             }

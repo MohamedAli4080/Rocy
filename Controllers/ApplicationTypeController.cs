@@ -5,18 +5,18 @@ using Rocy.Models;
 
 namespace Rocky.Controllers
 {
-    public class CategoryController : Controller
+    public class ApplicationTypeController : Controller
     {
         private readonly ApplicationDbContext _db;
-        public CategoryController(ApplicationDbContext db)
+        public ApplicationTypeController(ApplicationDbContext db)
         {
             this._db = db;
 
         }
         public IActionResult Index()
         {
-            var cat = _db.Category.ToList();
-            return View(cat);
+            var App = _db.ApplicationTypes.ToList();
+            return View(App);
         }
         [HttpGet]
         public IActionResult Create()
@@ -26,12 +26,12 @@ namespace Rocky.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create(Category Cat)
+        public IActionResult Create(ApplicationType App)
         {
             if (!ModelState.IsValid)
                 return View();
 
-            _db.Category.Add(Cat);
+            _db.ApplicationTypes.Add(App);
             _db.SaveChanges();
             return RedirectToAction("index");
         }

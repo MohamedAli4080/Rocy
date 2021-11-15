@@ -3,15 +3,14 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Rocy.Models
 {
-    public class Category
+    public class ApplicationType
     {
 
         [Key]
         public int Id { get; set; }
 
         public string Name { get; set; }
-        [DisplayName("Display order")]
-        public int Displayorder { get; set; }
+
 
 
     }
