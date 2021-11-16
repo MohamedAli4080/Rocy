@@ -15,8 +15,12 @@ namespace Rocky.Controllers
         }
         public IActionResult Index()
         {
-            var cat = _db.Category.ToList();
-            return View(cat);
+            var product = _db.product.ToList();
+            foreach (var item in product)
+            {
+                item.Category=_db.Category.FirstOrDefault(c=>c.Id==item.CategoryId);
+            }
+            return View(product);
         }
         [HttpGet]
         public IActionResult Create()
@@ -26,12 +30,12 @@ namespace Rocky.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create(Category Cat)
+        public IActionResult Create(Product product)
         {
             if (!ModelState.IsValid)
                 return View();
 
-            _db.Category.Add(Cat);
+            _db.product.Add(product);
             _db.SaveChanges();
             return RedirectToAction("index");
         }
@@ -39,22 +43,22 @@ namespace Rocky.Controllers
         [HttpGet]
         public IActionResult Edit(int id)
         {
-            var category=_db.Category.Find(id);
-            if(category ==null)
+            var Product=_db.product.Find(id);
+            if(Product ==null)
             return NotFound();
 
-            return View(category);
+            return View(Product);
         }
          [HttpPost]
           [ValidateAntiForgeryToken]
-        public IActionResult Edit(Category cat)
+        public IActionResult Edit(Product product)
         {
             if(!ModelState.IsValid)
-            return View(cat);
+            return View(product);
 
-            var category=_db.Category.Find(cat.Id);
-            category.Name=cat.Name;
-            category.Displayorder=cat.Displayorder;
+            var productdb=_db.Category.Find(product.Id);
+            productdb.Name=product.Name;
+           
             _db.SaveChanges();
             
             return RedirectToAction("index");
