@@ -36,6 +36,30 @@ namespace Rocky.Controllers
             return RedirectToAction("index");
         }
 
+        [HttpGet]
+        public IActionResult Edit(int id)
+        {
+           
+            var App=_db.ApplicationTypes.Find(id);
+            if(App==null)
+            return NotFound();
+
+            
+            return View(App);
+        }
+
+         [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Edit(ApplicationType App)
+        {
+            if (!ModelState.IsValid)
+                return View();
+
+            var AppDb=_db.ApplicationTypes.Find(App.Id);
+            AppDb.Name=App.Name;          
+            _db.SaveChanges();
+            return RedirectToAction("index");
+        }
 
     }
 }

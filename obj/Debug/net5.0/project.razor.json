@@ -1,5 +1,5 @@
 {
-  "FilePath": "d:\\Courses\\dotnet\\Rocy\\Rocy.csproj",
+  "FilePath": "c:\\Drive D\\Courses\\Asp.net_projects\\Rocy\\Rocy.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-3.0",
     "LanguageVersion": "5.0",
@@ -15619,58 +15619,68 @@
   "RootNamespace": "Rocy",
   "Documents": [
     {
-      "FilePath": "d:\\Courses\\dotnet\\Rocy\\Views\\Category\\Create.cshtml",
+      "FilePath": "c:\\Drive D\\Courses\\Asp.net_projects\\Rocy\\Views\\Category\\Edit.cshtml",
+      "TargetPath": "Views\\Category\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Drive D\\Courses\\Asp.net_projects\\Rocy\\Views\\Home\\Index.cshtml",
+      "TargetPath": "Views\\Home\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Drive D\\Courses\\Asp.net_projects\\Rocy\\Views\\Category\\Create.cshtml",
       "TargetPath": "Views\\Category\\Create.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "d:\\Courses\\dotnet\\Rocy\\Views\\ApplicationType\\Index.cshtml",
-      "TargetPath": "Views\\ApplicationType\\Index.cshtml",
+      "FilePath": "c:\\Drive D\\Courses\\Asp.net_projects\\Rocy\\Views\\ApplicationType\\Edit.cshtml",
+      "TargetPath": "Views\\ApplicationType\\Edit.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "d:\\Courses\\dotnet\\Rocy\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
-      "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\Courses\\dotnet\\Rocy\\Views\\Category\\Index.cshtml",
-      "TargetPath": "Views\\Category\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\Courses\\dotnet\\Rocy\\Views\\_ViewStart.cshtml",
-      "TargetPath": "Views\\_ViewStart.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\Courses\\dotnet\\Rocy\\Views\\_ViewImports.cshtml",
+      "FilePath": "c:\\Drive D\\Courses\\Asp.net_projects\\Rocy\\Views\\_ViewImports.cshtml",
       "TargetPath": "Views\\_ViewImports.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "d:\\Courses\\dotnet\\Rocy\\Views\\ApplicationType\\Create.cshtml",
-      "TargetPath": "Views\\ApplicationType\\Create.cshtml",
+      "FilePath": "c:\\Drive D\\Courses\\Asp.net_projects\\Rocy\\Views\\Category\\Index.cshtml",
+      "TargetPath": "Views\\Category\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "d:\\Courses\\dotnet\\Rocy\\Views\\Shared\\Error.cshtml",
-      "TargetPath": "Views\\Shared\\Error.cshtml",
+      "FilePath": "c:\\Drive D\\Courses\\Asp.net_projects\\Rocy\\Views\\_ViewStart.cshtml",
+      "TargetPath": "Views\\_ViewStart.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "d:\\Courses\\dotnet\\Rocy\\Views\\Home\\Privacy.cshtml",
-      "TargetPath": "Views\\Home\\Privacy.cshtml",
+      "FilePath": "c:\\Drive D\\Courses\\Asp.net_projects\\Rocy\\Views\\ApplicationType\\Index.cshtml",
+      "TargetPath": "Views\\ApplicationType\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "d:\\Courses\\dotnet\\Rocy\\Views\\Shared\\_Layout.cshtml",
+      "FilePath": "c:\\Drive D\\Courses\\Asp.net_projects\\Rocy\\Views\\Shared\\_Layout.cshtml",
       "TargetPath": "Views\\Shared\\_Layout.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "d:\\Courses\\dotnet\\Rocy\\Views\\Home\\Index.cshtml",
-      "TargetPath": "Views\\Home\\Index.cshtml",
+      "FilePath": "c:\\Drive D\\Courses\\Asp.net_projects\\Rocy\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Drive D\\Courses\\Asp.net_projects\\Rocy\\Views\\ApplicationType\\Create.cshtml",
+      "TargetPath": "Views\\ApplicationType\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Drive D\\Courses\\Asp.net_projects\\Rocy\\Views\\Shared\\Error.cshtml",
+      "TargetPath": "Views\\Shared\\Error.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Drive D\\Courses\\Asp.net_projects\\Rocy\\Views\\Home\\Privacy.cshtml",
+      "TargetPath": "Views\\Home\\Privacy.cshtml",
       "FileKind": "mvc"
     }
   ],

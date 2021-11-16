@@ -147,3 +147,8 @@ D:\Courses\dotnet\Rocy\obj\Debug\net5.0\Rocy.csproj.CopyComplete
 D:\Courses\dotnet\Rocy\obj\Debug\net5.0\Rocy.genruntimeconfig.cache
 D:\Courses\dotnet\Rocy\obj\Debug\net5.0\Razor\Views\ApplicationType\Create.cshtml.g.cs
 D:\Courses\dotnet\Rocy\obj\Debug\net5.0\Razor\Views\ApplicationType\Index.cshtml.g.cs
+C:\Drive D\Courses\Asp.net_projects\rocy\obj\Debug\net5.0\Razor\Views\ApplicationType\Create.cshtml.g.cs
+C:\Drive D\Courses\Asp.net_projects\rocy\obj\Debug\net5.0\Razor\Views\ApplicationType\Index.cshtml.g.cs
+C:\Drive D\Courses\Asp.net_projects\rocy\obj\Debug\net5.0\Razor\Views\Category\Create.cshtml.g.cs
+C:\Drive D\Courses\Asp.net_projects\Rocy\obj\Debug\net5.0\Razor\Views\Category\Edit.cshtml.g.cs
+C:\Drive D\Courses\Asp.net_projects\Rocy\obj\Debug\net5.0\Razor\Views\ApplicationType\Edit.cshtml.g.cs
