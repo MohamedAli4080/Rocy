@@ -14,7 +14,9 @@ namespace Rocy.Data
         }
         public DbSet<Category> Category { get; set; }
         public DbSet<ApplicationType> ApplicationTypes { get; set; }
-
+        public DbSet<Product> product { get; set; }
+        
+        
 
     }
 }
