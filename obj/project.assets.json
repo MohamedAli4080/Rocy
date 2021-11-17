@@ -5799,19 +5799,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Mohamed Ali\\.nuget\\packages\\": {}
+    "C:\\Users\\moham\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Drive D\\Courses\\Asp.net_projects\\rocy\\Rocy.csproj",
+      "projectUniqueName": "D:\\Courses\\dotnet\\Rocy\\Rocy.csproj",
       "projectName": "Rocy",
-      "projectPath": "C:\\Drive D\\Courses\\Asp.net_projects\\rocy\\Rocy.csproj",
-      "packagesPath": "C:\\Users\\Mohamed Ali\\.nuget\\packages\\",
-      "outputPath": "C:\\Drive D\\Courses\\Asp.net_projects\\rocy\\obj\\",
+      "projectPath": "D:\\Courses\\dotnet\\Rocy\\Rocy.csproj",
+      "packagesPath": "C:\\Users\\moham\\.nuget\\packages\\",
+      "outputPath": "D:\\Courses\\dotnet\\Rocy\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Mohamed Ali\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\moham\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5880,7 +5880,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }
