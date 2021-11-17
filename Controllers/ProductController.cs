@@ -1,7 +1,10 @@
+using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Rocy.Data;
 using Rocy.Models;
+using Rocy.Models.ViewModels;
 
 namespace Rocky.Controllers
 {
@@ -18,14 +21,34 @@ namespace Rocky.Controllers
             var product = _db.product.ToList();
             foreach (var item in product)
             {
-                item.Category=_db.Category.FirstOrDefault(c=>c.Id==item.CategoryId);
+                item.Category = _db.Category.FirstOrDefault(c => c.Id == item.CategoryId);
             }
             return View(product);
         }
         [HttpGet]
         public IActionResult Create()
         {
-            return View();
+            // IEnumerable<SelectListItem> selectCategogry=_db.Category.Select(c=>new SelectListItem{
+            //     Text=c.Name,
+            //     Value=c.Id.ToString()
+            // });
+
+            // ViewBag.selectCategogry=selectCategogry;
+
+            ProductVM productVM = new ProductVM()
+            {
+                product = new Product(),
+                CategoryList = _db.Category.Select(c => new SelectListItem
+                {
+                    Text = c.Name,
+                    Value = c.Id.ToString()
+                })
+            };
+
+
+
+
+            return View(productVM);
         }
 
         [HttpPost]
@@ -43,29 +66,29 @@ namespace Rocky.Controllers
         [HttpGet]
         public IActionResult Edit(int id)
         {
-            var Product=_db.product.Find(id);
-            if(Product ==null)
-            return NotFound();
+            var Product = _db.product.Find(id);
+            if (Product == null)
+                return NotFound();
 
             return View(Product);
         }
-         [HttpPost]
-          [ValidateAntiForgeryToken]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public IActionResult Edit(Product product)
         {
-            if(!ModelState.IsValid)
-            return View(product);
+            if (!ModelState.IsValid)
+                return View(product);
 
-            var productdb=_db.Category.Find(product.Id);
-            productdb.Name=product.Name;
-           
+            var productdb = _db.Category.Find(product.Id);
+            productdb.Name = product.Name;
+
             _db.SaveChanges();
-            
+
             return RedirectToAction("index");
         }
 
 
-         
+
 
 
     }
