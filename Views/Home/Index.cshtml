@@ -1,8 +1,17 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
-
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+﻿@model Rocy.Models.ViewModels.HomeVm;
+<div class="container">
+    <div class="text-center">
+        <button class="btn btn-dark filtter-button" data-filtter="all">All</button>
+        @foreach (var obj in @Model.Categotirs)
+        {
+                  <button class="btn btn-outline-secondary  filtter-button" data-filtter="@obj.Name">@obj.Name</button>
+        }
+    </div>
+    <br/>
+    <div class="row">
+        @foreach (var pro in @Model.Products)
+        {
+            <partial name="_IndividualProductCard" model="pro" />
+        }
+    </div>
 </div>

@@ -158,3 +158,5 @@ D:\Courses\dotnet\Rocy\obj\Debug\net5.0\Razor\Views\Product\Index.cshtml.g.cs
 D:\Courses\dotnet\Rocy\obj\Debug\net5.0\Razor\Views\Product\Create.cshtml.g.cs
 C:\Drive D\Courses\Asp.net_projects\Rocy\obj\Debug\net5.0\Razor\Views\Product\Create.cshtml.g.cs
 C:\Drive D\Courses\Asp.net_projects\Rocy\obj\Debug\net5.0\Razor\Views\Product\Index.cshtml.g.cs
+C:\Drive D\Courses\Asp.net_projects\Rocy\obj\Debug\net5.0\Razor\Views\Product\Delete.cshtml.g.cs
+C:\Drive D\Courses\Asp.net_projects\Rocy\obj\Debug\net5.0\Razor\Views\Shared\_IndividualProductCard.cshtml.g.cs

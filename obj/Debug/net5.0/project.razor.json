@@ -15634,6 +15634,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Drive D\\Courses\\Asp.net_projects\\Rocy\\Views\\Shared\\_IndividualProductCard.cshtml",
+      "TargetPath": "Views\\Shared\\_IndividualProductCard.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Drive D\\Courses\\Asp.net_projects\\Rocy\\Views\\ApplicationType\\Edit.cshtml",
       "TargetPath": "Views\\ApplicationType\\Edit.cshtml",
       "FileKind": "mvc"
@@ -15671,6 +15676,11 @@
     {
       "FilePath": "c:\\Drive D\\Courses\\Asp.net_projects\\Rocy\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Drive D\\Courses\\Asp.net_projects\\Rocy\\Views\\Product\\Delete.cshtml",
+      "TargetPath": "Views\\Product\\Delete.cshtml",
       "FileKind": "mvc"
     },
     {

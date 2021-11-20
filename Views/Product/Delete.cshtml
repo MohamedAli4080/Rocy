@@ -1,7 +1,7 @@
-@model Rocy.Models.ViewModels.ProductVM
+@model Rocy.Models.Product
 
 
-<form method="post" asp-action="Create" enctype="multipart/form-data">
+<form method="post"  >
     <div class="border p-3">
         <div class="row">
             <h3 class="text-info pl-3">Add Product</h3>
@@ -11,57 +11,39 @@
             <div class="col-8">
                 <div class="form-group row">
                     <div class="col-4">
-                        <label asp-for="product.Name"></label>
+                        <label asp-for="Name"></label>
 
                     </div>
                     <div class="col-8">
-                        <input type="text" asp-for="product.Name" class="form-control">
-                        <span asp-validation-for="product.Name" class="text-danger"></span>
+                        <input type="text" asp-for="Name" disabled class="form-control">
+                       
                     </div>
 
                 </div>
                 <div class="form-group row">
                     <div class="col-4">
-                        <label asp-for="product.Price"></label>
+                        <label asp-for="Price"></label>
                     </div>
                     <div class="col-8">
-                        <input type="text" asp-for="product.Price" class="form-control">
-                        <span asp-validation-for="product.Price" class="text-danger"></span>
+                        <input type="text" asp-for="Price" disabled class="form-control">
+                        
                     </div>
                 </div>
                 <div class="form-group row">
                     <div class="col-4">
-                        <label asp-for="product.Description"></label>
+                        <label asp-for="Description"></label>
                     </div>
                     <div class="col-8">
-                        <textarea id="summernote" asp-for="product.Description" class="form-control"></textarea>
-
-                        <span asp-validation-for="product.Description" class="text-danger"></span>
+                        <textarea id="summernote" disabled asp-for="Description" class="form-control"></textarea>
                     </div>
 
                 </div>
                 <div class="form-group row">
                     <div class="col-4">
-                        <label asp-for="product.CategoryId"></label>
+                        <label asp-for="CategoryId"></label>
                     </div>
                     <div class="col-8">
-                        <select Id="CategoryId" asp-for="product.CategoryId" asp-items="@Model.CategoryList"
-                             class="form-control">
-                            <option disabled selected>Select the category</option>
-                        </select>
-
-                    </div>
-
-                </div>
-                 <div class="form-group row">
-                    <div class="col-4">
-                        <label asp-for="product.ApplicationTypeId"></label>
-                    </div>
-                    <div class="col-8">
-                        <select Id="ApplicationTypeId" asp-for="product.ApplicationTypeId" asp-items="@Model.ApplicationType"
-                             class="form-control">
-                            <option disabled selected>Select the ApplicationType</option>
-                        </select>
+                         <input type="text" asp-for="Category.Name" disabled class="form-control">
 
                     </div>
 
@@ -71,7 +53,7 @@
 
                     </div>
                     <div class="col-8">
-                        <input type="file" multiple Id="UploadBox" name="Files" class="form-control">
+                        <input type="file" disabled multiple Id="UploadBox" name="Files" class="form-control">
                     </div>
                 </div>
 
@@ -81,8 +63,9 @@
                     <div class="col-8 offset-4 row">
 
                         <div class="col">
-                            <input type="submit" onclick="return validateinput()" class="btn btn-primary w-100"
-                                value="save" />
+                            <input type="submit" asp-route-id="@Model.Id" class="btn btn-danger w-100"
+                                value="Delete" asp-action="DeletePost" />
+                            
                         </div>
                         <div class="col">
                             <a asp-action="Index" class="btn btn-info w-100">Back to list</a>
@@ -91,10 +74,10 @@
                 </div>
             </div>
             <div class="col-4">
-                @if (@Model.product !=null)
-                {
-                     <img src="@AppConst.ProductImagePath@Model.product.Image" width="100%" class="p-3"/>
-                }
+              
+                
+                     <img src="@AppConst.ProductImagePath@Model.Image" width="100%" class="p-3"/>
+                
                
             </div>
         </div>
