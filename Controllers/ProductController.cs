@@ -99,7 +99,10 @@ namespace Rocky.Controllers
                     }
                     productDb.Image = fileName + exetention;
                 }
-
+                productDb.Name=productVM.product.Name;
+                productDb.ApplicationTypeId=productVM.product.ApplicationTypeId;
+                productDb.CategoryId=productVM.product.CategoryId;
+                productDb.Description=productVM.product.Description;
 
             }
 
