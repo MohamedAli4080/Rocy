@@ -1,13 +1,14 @@
 ﻿@model Rocy.Models.ViewModels.HomeVm;
 <div class="container">
     <div class="text-center">
-        <button class="btn btn-dark filtter-button" data-filtter="all">All</button>
+        <button class="btn btn-dark filter-button" data-filter="all">All</button>
         @foreach (var obj in @Model.Categotirs)
         {
-                  <button class="btn btn-outline-secondary  filtter-button" data-filtter="@obj.Name">@obj.Name</button>
+            <button class="btn btn-outline-secondary  filter-button"
+            data-filter="@obj.Name.Replace(' ','_')">@obj.Name</button>
         }
     </div>
-    <br/>
+    <br />
     <div class="row">
         @foreach (var pro in @Model.Products)
         {
@@ -15,3 +16,24 @@
         }
     </div>
 </div>
+
+@section Scripts{
+<script>
+    $(document).ready(function () {
+
+        $(".filter-button").click(function () {
+            console.log(this);
+            var value = $(this).attr('data-filter');
+            if (value == "all") {
+                $('.filter').show('1000');
+            }
+            else {
+                $(".filter").not('.' + value).hide('3000');
+                $('.filter').filter('.' + value).show('3000');
+
+            }
+        });
+
+    });
+</script>
+}

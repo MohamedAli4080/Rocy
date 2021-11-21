@@ -35,6 +35,17 @@ namespace Rocy.Controllers
 
             return View(homeVm);
         }
+        public IActionResult Details(int id)
+        {
+
+            DetailsVm details = new DetailsVm()
+            {
+                Product = _db.product.Include(c => c.Category).Include(a => a.ApplicationType).FirstOrDefault(p => p.Id == id),
+                ExistsInCart = false
+
+            };
+            return View(details);
+        }
 
         public IActionResult Privacy()
         {
