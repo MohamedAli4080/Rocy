@@ -1,3 +1,4 @@
+@using Rocy
 @model Rocy.Models.ViewModels.ProductVM
 
 
@@ -11,7 +12,7 @@
             <div class="col-8">
                 <div class="form-group row">
                     <div class="col-4">
-                        <input type="hidden" asp-for="product.Id"/>
+                        <input type="hidden" asp-for="product.Id" />
                         <label asp-for="product.Name"></label>
 
                     </div>
@@ -47,20 +48,20 @@
                     </div>
                     <div class="col-8">
                         <select Id="CategoryId" asp-for="product.CategoryId" asp-items="@Model.CategoryList"
-                             class="form-control">
+                            class="form-control">
                             <option disabled selected>Select the category</option>
                         </select>
 
                     </div>
 
                 </div>
-                 <div class="form-group row">
+                <div class="form-group row">
                     <div class="col-4">
                         <label asp-for="product.ApplicationTypeId"></label>
                     </div>
                     <div class="col-8">
-                        <select Id="ApplicationTypeId" asp-for="product.ApplicationTypeId" asp-items="@Model.ApplicationType"
-                             class="form-control">
+                        <select Id="ApplicationTypeId" asp-for="product.ApplicationTypeId"
+                            asp-items="@Model.ApplicationType" class="form-control">
                             <option disabled selected>Select the ApplicationType</option>
                         </select>
 
@@ -92,11 +93,11 @@
                 </div>
             </div>
             <div class="col-4">
-                @if (@Model.product !=null)
+                @if (@Model.product != null)
                 {
-                     <img src="@AppConst.ProductImagePath@Model.product.Image" width="100%" class="p-3"/>
+                    <img src="@AppConst.ProductImagePath@Model.product.Image" width="100%" class="p-3" />
                 }
-               
+
             </div>
         </div>
     </div>

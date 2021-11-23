@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Http;
+@inject IHttpContextAccessor HttpContextAccessor;
+@using Rocy.Utility;
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -29,21 +32,36 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home"
                                 asp-action="Privacy">Privacy</a>
                         </li>
-                      
+
 
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
                                 aria-haspopup="true" aria-expanded="false">Content managment</a>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" asp-area="" asp-controller="Category"
-                                asp-action="Index">Category</a>
+                                    asp-action="Index">Category</a>
                                 <a class="dropdown-item" asp-area="" asp-controller="ApplicationType"
-                                asp-action="Index">Application types</a>
+                                    asp-action="Index">Application types</a>
                                 <a class="dropdown-item" asp-area="" asp-controller="product"
-                                asp-action="Index">product</a>
-                         
-      
+                                    asp-action="Index">product</a>
+
+
                             </div>
+                        </li>
+                        <li>
+                            @if(HttpContextAccessor.HttpContext.Session.Get<List<ShoppingCart>>(AppConst.SessionCart) != null)
+                            {
+                                <a asp-action="index" asp-controller="Cart" class="nav-link">
+                                    @{
+                                    var count=HttpContextAccessor.HttpContext.Session.Get<List<ShoppingCart>>(AppConst.SessionCart).Count();    
+                                    }
+                               <i class="fas fa-shopping-cart"> &nbsp; ( @count )</i>
+                                </a>
+                            }else{
+                                <a href="#" class="nav-link">
+                                   <i class="fas fa-shopping-cart">(0)</i>
+                                </a>
+                            }
                         </li>
                     </ul>
                 </div>
