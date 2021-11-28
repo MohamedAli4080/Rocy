@@ -13,6 +13,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
+using Rocy.Models;
 
 namespace Rocy.Areas.Identity.Pages.Account
 {
@@ -23,20 +24,26 @@ namespace Rocy.Areas.Identity.Pages.Account
         private readonly UserManager<IdentityUser> _userManager;
         private readonly ILogger<RegisterModel> _logger;
         private readonly IEmailSender _emailSender;
+        private readonly RoleManager<IdentityRole> _rolemanger;
 
         public RegisterModel(
             UserManager<IdentityUser> userManager,
             SignInManager<IdentityUser> signInManager,
             ILogger<RegisterModel> logger,
-            IEmailSender emailSender)
+            IEmailSender emailSender,
+            RoleManager<IdentityRole> rolemanger
+
+            )
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _logger = logger;
             _emailSender = emailSender;
+            _rolemanger = rolemanger;
         }
 
         [BindProperty]
+
         public InputModel Input { get; set; }
 
         public string ReturnUrl { get; set; }
@@ -60,10 +67,21 @@ namespace Rocy.Areas.Identity.Pages.Account
             [Display(Name = "Confirm password")]
             [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
             public string ConfirmPassword { get; set; }
+            public string FullName { get; set; }
+
+            public string PhoneNumber { get; set; }
+
+
         }
 
         public async Task OnGetAsync(string returnUrl = null)
         {
+
+            if (!await _rolemanger.RoleExistsAsync(AppConst.AdminRole))
+            {
+                await _rolemanger.CreateAsync(new IdentityRole(AppConst.AdminRole));
+                await _rolemanger.CreateAsync(new IdentityRole(AppConst.CustomerRole));
+            }
             ReturnUrl = returnUrl;
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
         }
@@ -74,10 +92,26 @@ namespace Rocy.Areas.Identity.Pages.Account
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             if (ModelState.IsValid)
             {
-                var user = new IdentityUser { UserName = Input.Email, Email = Input.Email };
+                var user = new ApplicationUser
+                {
+                    UserName = Input.Email,
+                    Email = Input.Email,
+                    PhoneNumber = Input.PhoneNumber,
+                    FullName = Input.FullName
+                };
                 var result = await _userManager.CreateAsync(user, Input.Password);
                 if (result.Succeeded)
                 {
+
+                    if (User.IsInRole(AppConst.AdminRole))
+                    {
+                        await _userManager.AddToRoleAsync(user, AppConst.AdminRole);
+                    }
+                    else
+                    {
+                        await _userManager.AddToRoleAsync(user, AppConst.CustomerRole);
+                    }
+
                     _logger.LogInformation("User created a new account with password.");
 
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);

@@ -9,6 +9,7 @@ using Microsoft.Extensions.Hosting;
 
 
 
+
 using Rocy.Data;
 
 namespace Rocy
@@ -28,7 +29,8 @@ namespace Rocy
             services.AddControllersWithViews();
              services.AddDbContext<ApplicationDbContext>(options => 
              options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-            services.AddDefaultIdentity<IdentityUser>()
+            services.AddIdentity<IdentityUser,IdentityRole>()
+            .AddDefaultTokenProviders().AddDefaultUI()
             .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddHttpContextAccessor();
             services.AddSession(option=>{
