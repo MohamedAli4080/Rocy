@@ -28,7 +28,8 @@
                                         <label>Name</label>
                                     </div>
                                     <div class="col-9">
-                                        <input type="text" class="form-control" />
+                                        <input asp-for="@Model.User.FullName" type="text" class="form-control" />
+                                        <span asp-validation-for="@Model.User.FullName" class="text-danger"></span>
 
                                     </div>
                                 </div>
@@ -37,8 +38,8 @@
                                         <label>Phone</label>
                                     </div>
                                     <div class="col-9">
-                                        <input type="text" class="form-control" />
-                                        <span class="text-danger"></span>
+                                        <input asp-for="@Model.User.PhoneNumber" type="text" class="form-control" />
+                                        <span asp-validation-for="@Model.User.PhoneNumber" class="text-danger"></span>
                                     </div>
                                 </div>
                                 <div class="row my-1">
@@ -46,8 +47,8 @@
                                         <label>Email</label>
                                     </div>
                                     <div class="col-9">
-                                        <input type="text" class="form-control" />
-                                        <span class="text-danger"></span>
+                                        <input asp-for="@Model.User.Email" type="text" class="form-control" />
+                                        <span asp-validation-for="@Model.User.Email" class="text-danger"></span>
                                     </div>
                                 </div>
                             </div>
@@ -57,12 +58,17 @@
                                         <span class="text-info">Order Summary:</span>
                                     </h4>
                                     <ul class="list-group mb-3">
-                                        <li class="list-group-item d-flex justify-content-between">
-                                            <div>
-                                                <h6 class="my-0">Product Name</h6>
-                                                <small class="text-muted">Price per Sqft: $$$$</small>
-                                            </div>
-                                        </li>
+
+                                        @foreach (var obj in @Model.ProductList)
+                                        {
+                                            <li class="list-group-item d-flex justify-content-between">
+                                                <div>
+                                                    <h6 class="my-0">@obj.Name</h6>
+                                                    <small class="text-muted">@obj.Price</small>
+                                                </div>
+                                            </li>
+                                        }
+
                                     </ul>
                                 </div>
                             </div>
@@ -83,5 +89,5 @@
 
 
 @section Scripts{
-    <partial name="_ValidationScriptsPartial" />
+<partial name="_ValidationScriptsPartial" />
 }

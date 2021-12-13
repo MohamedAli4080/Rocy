@@ -68,7 +68,8 @@ namespace Rocy.Controllers
             var products = _db.product.Where(p => prodIds.Contains(p.Id));
 
             productuserVm=new ProductUserVm (){
-                User=_db.ApplicationUser.FirstOrDefault(u=>u.Id==claim.Value)
+                User=_db.ApplicationUser.FirstOrDefault(u=>u.Id==claim.Value),
+                ProductList=products
             };
             return View(productuserVm);
         }
